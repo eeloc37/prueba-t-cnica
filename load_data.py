@@ -1,8 +1,6 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-import pandas as pd
-
 # Cargar archivo
 df = pd.read_csv('prueba-técnica/data_prueba_tecnica_extracted.csv')
 
@@ -38,7 +36,7 @@ df = df[
         "paid_at",
     ]
 ]
-df["paid_at"] = pd.to_datetime(df["paid_at"], errors="coerce")
+
 
 # IDs no nulos
 assert df["id"].notna().all()
@@ -46,6 +44,7 @@ assert df["company_id"].notna().all()
 
 # Amount válido
 assert (df["amount"] >= 0).all()
+assert (df["amount"] <= 9_999_999_999_999_999).all()
 
 # Conexión MySQL
 engine = create_engine(
@@ -57,5 +56,7 @@ df.to_sql(
     name="cargo",
     con=engine,
     if_exists="append",
-    index=False
+    index=False,
 )
+# Guardar datos transformados en un nuevo CSV
+df.to_csv("data_prueba_tecnica_transformed.csv", index=False)
