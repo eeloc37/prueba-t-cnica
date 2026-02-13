@@ -1,6 +1,6 @@
 CREATE TABLE companies (
     company_id VARCHAR(24) NOT NULL PRIMARY KEY,
-    company_name VARCHAR(130) NOT NULL
+    company_name VARCHAR(130) NULL
 );
 
 CREATE TABLE charges (

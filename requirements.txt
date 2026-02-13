@@ -1,0 +1,8 @@
+jupyter
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+pandas
+numpy
+mysql-connector-python
