@@ -2,3 +2,7 @@ sqlalchemy
 pandas
 numpy
 mysql-connector-python
+pytest
+httpx
+fastapi
+uvicorn
