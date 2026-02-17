@@ -139,7 +139,7 @@ assert (df["amount"] <= 9_999_999_999_999_999).all()
 from sqlalchemy import create_engine
 # Conexión MySQL
 engine = create_engine(
-    "mysql+mysqlconnector://appuser:apppass@localhost:3306/transacciones_db"
+    "mysql+mysqlconnector://appuser:apppass@localhost:8080/transacciones_db"
 )
 
 # Insertar datos

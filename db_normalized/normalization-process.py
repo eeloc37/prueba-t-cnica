@@ -53,7 +53,7 @@ charges_df.head()
 
 
 engine = create_engine(
-    "mysql+mysqlconnector://appuser:apppass@localhost:3307/transacciones_db"
+    "mysql+mysqlconnector://appuser:apppass@localhost:8081/transacciones_db"
 )
 
 companies_df.to_sql(
